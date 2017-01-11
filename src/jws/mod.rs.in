@@ -1,0 +1,22 @@
+#[derive(Debug, Serialize, Default)]
+pub struct Header {
+    pub alg: String,
+    pub typ: String,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub kid: Option<String>
+}
+
+#[derive(Debug, Serialize, Default)]
+pub struct Claims {
+    pub iss: String,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub scope: Option<String>,
+    pub aud: String,
+    pub exp: u32,
+    pub iat: i64,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub typ: Option<String>,
+    #[serde(skip_serializing_if="Option::is_none")]
+    pub sup: Option<String>
+    // todo: customs
+}

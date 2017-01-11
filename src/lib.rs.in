@@ -1,0 +1,8 @@
+
+#[derive(Debug, Clone, Default, Deserialize)]
+struct TokenJson {
+  access_token: String,
+  token_type: Option<String>,
+  refresh_token: Option<String>,
+  expires_in: Option<usize>
+}
